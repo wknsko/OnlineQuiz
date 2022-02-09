@@ -53,29 +53,36 @@ function showQuestion(q) {
     document.getElementById('quiz').innerHTML += `
     <div class="question-body">
         <div class="question-text">${q.question}</div>
-        <input type="radio" id="a" name="${arr.indexOf(q)}" value="${q.answers.a}" checked>
-        <label for="a">${q.answers.a}</label>
+        <input type="radio" id="a" name="${arr.indexOf(q)}" value="${q.answers.a}">
+        <label for="a" class="q-var">${q.answers.a}</label>
         <input type="radio" id="b" name="${arr.indexOf(q)}" value="${q.answers.b}">
-        <label for="b">${q.answers.b}</label>
+        <label for="b" class="q-var">${q.answers.b}</label>
         <input type="radio" id="c" name="${arr.indexOf(q)}" value="${q.answers.c}">
-        <label for="c">${q.answers.c}</label>
+        <label for="c" class="q-var">${q.answers.c}</label>
     </div>
 
   `;
 
 }
-let rightAnswers = 0;
+  let rightAnswers = 0;
+let clickCounter = 0;
 
 function getResults() {
-
+  clickCounter++;
+  if (clickCounter==1) {
+    document.getElementById('res').innerHTML = 'Results are in';
+    document.getElementById('res').disabled = true;
+  }
   arr.forEach((el) => {
     toAnswer(el);
 });
 
 document.getElementById('results').innerHTML += `
 <div class="per">Right Answers: ${rightAnswers}</div>
-`;
+<button onclick="location.reload();" class="reload-btn">Try again</btn>`;
+
 };
+
 
 
 
@@ -98,8 +105,9 @@ function toAnswer(ans) {
     rightAnswers += 1;
   } else {
     document.getElementById('results').innerHTML += `
-    <div class="wrong">${arr.indexOf(ans)} : You are wrong! It's ${ans.correctAnswer}</div>`
+    <div class="wrong">${arr.indexOf(ans)} : You are wrong! It's ${ans.valueOfRightAnswer()}</div>`
   }
+
 
 
 };
