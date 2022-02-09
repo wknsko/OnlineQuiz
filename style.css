@@ -1,0 +1,116 @@
+body {
+  background-color: #EEE5E9;
+  font-family: 'Helvetica', sans-serif;
+}
+h1{
+  text-align: center;
+  color: #CF5C36;
+  font-size: 30px;
+  text-transform:uppercase;
+}
+.question-body {
+  margin:30px 10px;
+  padding-left: 30px;
+  font-size: 18px;
+  max-width: 700px;
+
+}
+
+.question-text{
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.q-var {
+  color: #5C5C5C;
+}
+
+input[type='radio']:after {
+        width: 12px;
+        height: 12px;
+        border-radius: 12px;
+        top: -2px;
+        left: 0px;
+        position: relative;
+        background-color: #EFC88B;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+input[type='radio']:checked:after {
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  top: -2px;
+  left: 0px;
+  position: relative;
+  background-color: #CF5C36;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+.result-body {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+#res {
+  background-color: transparent;
+  border: 2px solid #CF5C36;
+  color: #CF5C36;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 auto;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  width: 180px;
+}
+#res:hover {
+  color: white;
+  background-color: #CF5C36;
+}
+#res:disabled {
+  background-color: transparent;
+  border: 2px solid #E7AB4B;
+  color: #E7AB4B;
+}
+#res:disabled:hover {
+  background-color: transparent;
+  border: 2px solid #E7AB4B;
+  color: #E7AB4B;
+  cursor: none;
+}
+.reload-btn {
+  width: 150px;
+  font-size: 14px;
+  margin:30px 0;
+  padding:10px 15px;
+  border: 3px solid #5C5C5C;
+  color: #5C5C5C;
+  font-weight: 600;
+  cursor: pointer;
+}
+.wrong, .right {
+  margin: 15px 0;
+  font-size: 18px;
+}
+.right {
+  color: #5DB167;
+}
+.wrong {
+  color: #8B5856;
+}
+.per {
+  color:  #5C5C5C;
+  font-size: 25px;
+  text-decoration: underline;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
